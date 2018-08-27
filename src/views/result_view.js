@@ -15,7 +15,12 @@ ResultView.prototype.bindEvents = function() {
 
 ResultView.prototype.updateView = function(result) {
   const resultElement = document.querySelector('#result');
-  resultElement.textContent =`There are ${result} words`;
+  if (result === 1) {
+    resultElement.textContent = `There is ${result} word`;
+  } else {
+    resultElement.textContent =`There are ${result} words`;
+  }
+
 };
 
 
