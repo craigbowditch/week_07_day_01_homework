@@ -8,16 +8,15 @@ const WordCounter = function() {
 WordCounter.prototype.bindEvents = function() {
   PubSub.subscribe('InputView:text-inputted', (event) => {
     const inputtedText = event.detail;
-    const result = this.wordCount(inputtedText);
-    PubSub.publish("wordCounter:result", result);
+    const result = this.countWords(inputtedText);
+    PubSub.publish("WordCounter:result", result);
   })
 };
 
 
-WordCounter.prototype.wordCount = function(text) {
-  const textCopy = text.split(' ');
-  const wordCount = textCopy.length;
-  return wordCount;
+WordCounter.prototype.countWords = function(text) {
+  const words = text.split(' ');
+  return words.length;
 }
 
 

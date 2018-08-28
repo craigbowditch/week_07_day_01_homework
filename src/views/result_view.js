@@ -5,7 +5,7 @@ const ResultView = function() {
 };
 
 ResultView.prototype.bindEvents = function() {
-  PubSub.subscribe('wordCounter:result', (event) => {
+  PubSub.subscribe('WordCounter:result', (event) => {
     const result = event.detail;
     this.updateView(result);
 
