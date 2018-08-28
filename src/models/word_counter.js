@@ -15,7 +15,7 @@ WordCounter.prototype.bindEvents = function() {
 
 
 WordCounter.prototype.countWords = function(text) {
-  const words = text.split(' ');
+  const words = text.trim().split(' ');
   return words.length;
 }
 
